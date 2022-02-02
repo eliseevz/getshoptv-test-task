@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useRef} from "react"
+import ReactPlayer from "react-player";
+import video from "./assets/video.mp4"
 
 function App() {
+    const ref = useRef(null)
+
+    useEffect(() => {
+        ref.current.focus()
+    },[])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div tabIndex="0" ref={ref}>
+        <div className="videoContainer">
+            <ReactPlayer
+                playing={true}
+                style={{zIndex: 1}}
+                width="100%"
+                height= "auto"
+                url={video}
+                muted={true}
+                loop={true}
+            />
+        </div>
     </div>
   );
 }
