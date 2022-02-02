@@ -9,6 +9,10 @@ body {
   overflow: hidden;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -23,4 +27,134 @@ code {
   bottom: 0;
   right: 0;
   zIndex: -1
+}
+
+.contentContainer {
+  z-index: 100000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.offerWrap {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  background: #0ca2f3;
+  height: 58vh;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullHeightWrap {
+  background: #0ca2f3;
+  position: absolute;
+  height: 100vh;
+  left: 0;
+  width: 500px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formInput {
+  background: none;
+  font-size: 35px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.formSymbol {
+  text-align: center;
+  width: 90px;
+  height: 50px;
+  margin: 10px;
+  font-size: 25px;
+  border: 1px solid black;
+  background: #fff;
+}
+
+.formCommand {
+  font-size: 35px;
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  font-size: 25px;
+  border: 1px solid black;
+  background: #fff;
+}
+
+.formCommand:hover, .formSymbol:hover {
+  background: #bdbdbd;
+}
+
+.formCommand:focus, .formSymbol:focus {
+  background: #000;
+  color: #ffffff;
+}
+
+.formCheckBox {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black
+}
+
+.formCheckBox:checked {
+  background: #000;
+}
+
+.formSubmitButton {
+  background: none;
+  border: 1px solid black;
+  width: 80%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 150px;
+  background: #fff;
+  color: #000000;
+  /*padding-top: 30px;*/
+  /*padding-bottom: 30px;*/
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.QRcode {
+  position: absolute;
+  bottom: 0px;
+  right: 50px;
+  height: 300px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.QRcode h5 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: right;
+  margin-right: 25px;
 }
