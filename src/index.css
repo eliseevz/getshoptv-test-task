@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  overflow: hidden;
+  /*height: 100vh;*/
+  width: 1280px;
+  height: 720px;
+  /*overflow: hidden;*/
 }
 
 * {
@@ -41,9 +41,9 @@ code {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 400px;
-  background: #0ca2f3;
-  height: 58vh;
+  width: 251px;
+  background: #86D3F4;
+  height: 400px;
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -51,12 +51,46 @@ code {
   align-items: center;
 }
 
+.offerQR {
+  height: 126px;
+  width: 126px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.offerHeader {
+  width: 231px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.offerQRText {
+  width: 126px;
+  height: 32px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1em;
+}
+
+.myBtn {
+  width: 156px;
+  height: 52px;
+  background: #000000;
+  align-items: center;
+  color: #86D3F4;
+  outline: none;
+  border: none;
+}
+
+
 .fullHeightWrap {
-  background: #0ca2f3;
+  background: #86D3F4;
   position: absolute;
   height: 100vh;
   left: 0;
-  width: 500px;
+  width: 380px;
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -73,8 +107,13 @@ code {
   outline: none;
   font-weight: bold;
   text-align: center;
-  border-bottom: 1px solid black;
 }
+
+.formManager {
+  line-height: 1em;
+}
+
+
 
 .formSymbol {
   text-align: center;
@@ -108,12 +147,41 @@ code {
 .formCheckBox {
   width: 40px;
   height: 40px;
-  border: 1px solid black
+  outline: none;
+  border: none;
+  display: none;
 }
 
 .formCheckBox:checked {
-  background: #000;
+  background: red;
+  color: #000000;
 }
+
+.formCheckLabel:before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 3px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid black;
+}
+
+.formCheckBox:checked + .formCheckLabel:before {
+  content: " \2713";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color: #000000;
+}
+
+.formCheckLabel {
+  width: 200px;
+  position: relative;
+}
+
 
 .formSubmitButton {
   background: none;
@@ -124,13 +192,15 @@ code {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
+  margin-top: 13px;
 }
 
 .closeButton {
   position: absolute;
   top: 30px;
   right: 30px;
-  width: 150px;
+  width: 88px;
+  height: 52px;
   background: #fff;
   color: #000000;
   /*padding-top: 30px;*/
@@ -144,12 +214,15 @@ code {
 
 .QRcode {
   position: absolute;
-  bottom: 0px;
-  right: 50px;
-  height: 300px;
-  width: 500px;
+  bottom: 30px;
+  right: 30px;
   display: flex;
   align-items: center;
+}
+
+.QRcode img {
+  height: 110px;
+  width: 110px;
 }
 
 .QRcode h5 {
@@ -157,4 +230,20 @@ code {
   color: #fff;
   text-align: right;
   margin-right: 25px;
+  font-size: 16px;
+  width: 194px;
+  font-weight: normal;
+}
+
+.successTitle {
+  font-size: 32px;
+  width: 284px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.successText {
+  font-size: 14px;
+  width: 284px;
+  text-align: center;
 }

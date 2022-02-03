@@ -9,11 +9,11 @@ const Offer = () => {
 
     return (
         <div className="offerWrap">
-            <h4 className="text-center">Исполните мечту вашего малыша!</h4>
-            <h5 className="mb-5">Купите ему Volvo track!</h5>
-            <img src={qrCode} alt=""/>
-            <p className="fs-5 mt-2">Сканируйте QR код или нажмите ок</p>
-            <button onClick={() => history.push("/form")} className="btn btn-dark ps-5 pe-5">OK</button>
+            <h4 className="offerHeader text-center">Исполните мечту вашего малыша!</h4>
+            <h5 className="offerHeader">Купите ему Volvo track!</h5>
+            <img className="offerQR" src={qrCode} alt=""/>
+            <p className="offerQRText">Сканируйте QR код или нажмите ок</p>
+            <button onClick={() => history.push("/form")} className="myBtn">OK</button>
         </div>
     );
 };

@@ -10,10 +10,6 @@ function App() {
 
     const ref = useRef(null)
 
-    useEffect(() => {
-        ref.current.focus()
-    },[])
-
 
   return (
     <div tabIndex="0" ref={ref}>
