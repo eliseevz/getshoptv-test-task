@@ -38,7 +38,6 @@ const FormPage = () => {
 // useEffect, созданный для создания массива контролируемых node элементов
     useEffect(() => {
         if (general) {
-            console.log(general.current.focus())
             general.current.focus()
             const data = parseNodeElements(controlsConfig, general)
             setControls(data)

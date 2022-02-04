@@ -18,7 +18,6 @@ export const KeyboardProvider = ({children}) => {
     const ref = useRef()
 
     const heyHandler = (e) => {
-        console.log("key")
         if (preventedList.includes(e.key)) {
             e.preventDefault()
         }
