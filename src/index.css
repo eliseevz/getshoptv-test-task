@@ -4,8 +4,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*height: 100vh;*/
-  width: 1280px;
-  height: 720px;
+  min-width: 1280px;
+  min-height: 720px;
   /*overflow: hidden;*/
 }
 
@@ -84,6 +84,16 @@ code {
   border: none;
 }
 
+.myBtn:focus {
+  background: #262626;
+  border: 2px solid #ffffff;
+}
+
+.myBtn:active {
+  background: #ffffff;
+  color: #000;
+}
+
 
 .fullHeightWrap {
   background: #86D3F4;
@@ -140,7 +150,13 @@ code {
 }
 
 .formCommand:focus, .formSymbol:focus {
-  background: #000;
+  background: #4e4e4e;
+  color: #ffffff;
+  outline: none;
+}
+
+.formCommand:focus, .formSymbol:active {
+  background: #050505;
   color: #ffffff;
 }
 
@@ -149,8 +165,10 @@ code {
   height: 40px;
   outline: none;
   border: none;
-  display: none;
+  z-index: -10000;
+  /*display: none;*/
 }
+
 
 .formCheckBox:checked {
   background: red;
@@ -182,6 +200,13 @@ code {
   position: relative;
 }
 
+.formCheckLabel:focus {
+}
+
+.formCheckBox:focus + .formCheckLabel {
+  border: 1px solid black;
+}
+
 
 .formSubmitButton {
   background: none;
@@ -211,6 +236,16 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+.closeButton:focus {
+  background: #8b8b8b;
+}
+
+.closeButton:active {
+  background: #101010;
+  color: #fff;
+}
+
 
 .QRcode {
   position: absolute;
@@ -246,4 +281,62 @@ code {
   font-size: 14px;
   width: 284px;
   text-align: center;
+}
+
+.sliderScreen {
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000000000000000;
+  background-size: cover!important;
+  background-repeat: no-repeat!important;
+  background-position: center center!important;
+  background-color: black!important;
+}
+
+.arrowsContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000000000000000000;
+}
+
+.arrowWrap {
+  height: 36px;
+  width: 72px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  font-size: 25px;
+  position: relative;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.arrowBg {
+  transform: skew(-35deg, 0deg);
+  height: 100%;
+  width: 100%;
+  background: #eeeeee;
+  border: 1px solid black;
+  color: #000;
+}
+
+.arrowWrap:focus .arrowBg {
+  background: #b6b6b6;
+}
+
+.arrowWrap:active .arrowBg {
+  background: #000000;
+}
+
+.arrowWrap:active {
+  color: #ffffff;
+}
+
+.arrowWrap i {
+  position: absolute;
+  top: 2px;
+  left: 20px;
 }

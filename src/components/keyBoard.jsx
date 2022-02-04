@@ -1,43 +1,34 @@
 import React from 'react';
-import {config} from "../utils/keyBoard.config"
 
-const KeyBoard = () => {
+const KeyBoard = ({deleteNumberHandler, addNumberHandler}) => {
 
-    const newData = []
-    for(let i = 0; i < config.rows; i++) {
-        const blankArray = []
-        for(let j = 0; j < config.cols; j++) {
-            const el = config.data[i * (config.rows - 1) + j]
-            if (el !== undefined) {
-                blankArray.push(el)
-            }
-        }
-        newData.push(blankArray)
+    const handleClick = (e, number) => {
+        e.stopPropagation()
+        e.preventDefault()
+        addNumberHandler(number)
     }
 
-    console.log(newData, ' new data')
-
     return (
-        <div className="keyboard d-flex flex-column justify-content-center">
-            {
-                // config.data.map(item => {
-                //     return <button>{item.value}</button>
-                // })
-                newData.map((item) => {
-                    return <div>
-                        {
-                            item.map(el => {
-                                if (el.type === "symbol") {
-                                    return <button className="formSymbol">{el?.value}</button>
-                                }
-                                if (el.type === "command") {
-                                    return <button className="formCommand">{el?.value}</button>
-                                }
-                            })
-                        }
-                    </div>
-                })
-            }
+        <div id="keyboard" className="keyboard d-flex flex-column justify-content-center">
+            <div>
+                <button onClick={(e) => handleClick(e, 1)} className="formSymbol">1</button>
+                <button onClick={() => addNumberHandler(2)} className="formSymbol">2</button>
+                <button onClick={() => addNumberHandler(3)} className="formSymbol">3</button>
+            </div>
+            <div>
+                <button onClick={() => addNumberHandler(4)} className="formSymbol">4</button>
+                <button onClick={() => addNumberHandler(5)} className="formSymbol">5</button>
+                <button onClick={() => addNumberHandler(6)} className="formSymbol">6</button>
+            </div>
+            <div>
+                <button onClick={() => addNumberHandler(7)} className="formSymbol">7</button>
+                <button onClick={() => addNumberHandler(8)} className="formSymbol">8</button>
+                <button onClick={() => addNumberHandler(9)} className="formSymbol">9</button>
+            </div>
+            <div>
+                <button onClick={deleteNumberHandler} className="formCommand">Стереть</button>
+                <button onClick={() => addNumberHandler(0)} className="formSymbol">0</button>
+            </div>
         </div>
     );
 };

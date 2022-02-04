@@ -1,40 +1,35 @@
 import React, {useEffect, useRef} from "react"
-import ReactPlayer from "react-player";
-import video from "./assets/video.mp4"
-import {BrowserRouter, Switch, Route} from "react-router-dom";
-import MainPage from "./pages/MainPage";
+import {Router, Switch, Route} from "react-router-dom";
+import PromoPage from "./pages/PromoPage";
 import FormPage from "./pages/FormPage";
 import FinalPage from "./pages/FinalPage";
+import MainPage from "./pages/MainPage";
+import {KeyboardProvider} from "./hooks/useKeyBoard";
+import PlayerProvider from "./hooks/usePlayer";
+import history from "./utils/history";
+import {withRouter} from "react-router-dom";
 
-function App() {
+export default withRouter(function App({location}) {
 
-    const ref = useRef(null)
-
+    useEffect(() => {
+        const keysListener = document.querySelector(".keyboard_controller")
+        if (keysListener) {
+            keysListener.focus()
+        }
+    }, [location])
 
   return (
-    <div tabIndex="0" ref={ref}>
-        <BrowserRouter>
+    <KeyboardProvider>
+        <PlayerProvider>
             <div className="contentContainer">
                 <Switch>
                     <Route path="/final" exact component={FinalPage}/>
                     <Route path="/form" exact component={FormPage}/>
+                    <Route path="/promo" exact component={PromoPage}/>
                     <Route path="/" exact component={MainPage}/>
                 </Switch>
             </div>
-        </BrowserRouter>
-        <div className="videoContainer">
-            <ReactPlayer
-                playing={true}
-                style={{zIndex: 1}}
-                width="100%"
-                height= "auto"
-                url={video}
-                muted={true}
-                loop={true}
-            />
-        </div>
-    </div>
+        </PlayerProvider>
+    </KeyboardProvider>
   );
-}
-
-export default App;
+})

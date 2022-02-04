@@ -6,7 +6,7 @@ const CloseButton = () => {
     const history = useHistory()
 
     return (
-        <button onClick={() => history.push("/")} className="closeButton">
+        <button id="exitButton" onClick={() => history.push("/")} className="closeButton">
             &times;
         </button>
     );
